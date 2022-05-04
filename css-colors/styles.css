@@ -1,0 +1,9 @@
+/* Fünf verschiedene Arten Farben zu definieren */
+
+body {
+    /* background-color: #8b1d1d; */
+    /* background-color: rgb(90, 38, 90); */
+    /* background-color: rgba(40, 40, 40, 4); */
+    /* background-color: hsl(54, 100%, 23%); */
+    background-color: hsla(54, 100%, 23%, 1);
+}
