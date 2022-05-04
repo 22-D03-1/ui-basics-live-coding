@@ -1,0 +1,69 @@
+/* Verschiedene Arten die Größe von Elementen festzulegen */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    /* Die Schriftgröße auf dem HTML Element legt die Größe von 1rem fest */
+    /* Standart sind 16px */
+    /* font-size: 20px; */
+}
+
+div {
+    margin-bottom: 2rem;
+}
+
+.pixel {
+    height: 100px;
+    width: 100px;
+    background-color: hsl(30, 50%, 50%);
+}
+
+/* 1rem ist die Schriftgröße im html Element. Die ist im Normalfall 16px */
+.rem {
+    height: 2rem; /* 2 * 16px = 32px */
+    width: 2rem;
+    background-color: hsl(209, 50%, 50%);
+}
+
+/* em ist wie rem, aber anstatt der Schriftgröße des html Elements wird die nächst höhere Schriftgröße verwendet
+Der container hat font-size 50px. Also ist 1em = 50px
+*/
+.container {
+    font-size: 50px;
+}
+.em {
+    width: 2em; /* 2 * 50px = 100px */
+    height: 2em;
+    background-color: hsl(61, 87%, 55%);
+}
+
+/* 1vw = 1% der Breite des Bildschirms*/
+.vw {
+    height: 5vw;
+    width: 5vw;
+    background-color: hsl(286, 50%, 50%);
+}
+
+/* 1vh = 1% der Höhe des Bildschirms*/
+.vh {
+    height: 3vh;
+    width: 3vh;
+    background-color: hsl(165, 50%, 50%);
+}
+
+/* Der Prozent wert nimmt die Größe vom Elternelement */
+.container-prozent {
+    width: 300px;
+    height: 50px;
+    background-color: black;
+}
+.prozent {
+    height: 25%;
+    width: 50%;
+    background-color: hsl(328, 50%, 50%);
+}
