@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Mit dem title tag beschreibt man die Seite  -->
+        <title>Accessibility</title>
+    </head>
+    <body>
+        <!-- Mit dem alt attribute Bilder beschreiben -->
+        <img
+            width="300px"
+            alt="Ein Bild von einem Porsche"
+            src="https://images.unsplash.com/photo-1597858520171-563a8e8b9925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"
+        />
+        <br />
+
+        <!-- Variante eins mit for attribute -->
+        <label for="username">Nutzername</label>
+        <input id="username" type="username" placeholder="username" />
+        <br />
+        <!-- Variante zwei mit Verschachtelung -->
+        <label>
+            Passwort
+            <input type="password" placeholder="password" />
+        </label>
+        <br />
+        <label>
+            Lieblingstier auswählen
+            <select>
+                <option>Hund</option>
+                <option>Katze</option>
+                <option>Maus</option>
+                <option>Elefant</option>
+            </select>
+        </label>
+
+        <br />
+        <!-- Mit aria-label direkt im Element beschreiben was es macht -->
+        <button aria-label="Notiz hinzufügen">+</button>
+        <br />
+
+        <!-- Mit aria-labelledby ein fremdes Element als Label benutzen -->
+        <h3 id="button-label">Lösche dein Profil</h3>
+        <button aria-labelledby="button-label">X</button>
+    </body>
+</html>

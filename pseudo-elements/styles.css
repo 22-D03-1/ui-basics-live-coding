@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html,
+body {
+    font-family: sans-serif;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+button {
+    border: 0;
+    background-color: cornflowerblue;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+button::after {
+    content: "ᐳ";
+    margin-left: 0.5rem;
+}
+
+.input {
+    position: relative;
+}
+
+.input::after {
+    content: "🔍";
+    font-size: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-8px);
+}
+
+input {
+    padding: 1rem;
+    padding-right: 3rem;
+}
