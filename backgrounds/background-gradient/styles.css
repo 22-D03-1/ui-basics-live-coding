@@ -1,0 +1,58 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.box {
+    width: 80vw;
+    height: 20vh;
+}
+
+.gradient-1 {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(22, 0, 117, 1) 46%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
+
+.gradient-2 {
+    background: rgb(247, 255, 0);
+    background: radial-gradient(
+        circle,
+        rgba(247, 255, 0, 1) 0%,
+        rgba(243, 144, 0, 1) 46%,
+        rgba(101, 0, 0, 1) 100%
+    );
+}
+
+.gradient-3 {
+    background: rgb(255, 0, 0);
+    background: linear-gradient(
+        106deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 254, 0, 1) 15%,
+        rgba(54, 255, 0, 1) 32%,
+        rgba(0, 234, 255, 1) 50%,
+        rgba(61, 0, 255, 1) 65%,
+        rgba(255, 0, 221, 1) 84%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
+
+.font-gradient {
+    color: linear-gradient(
+        106deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 254, 0, 1) 15%,
+        rgba(54, 255, 0, 1) 32%,
+        rgba(0, 234, 255, 1) 50%,
+        rgba(61, 0, 255, 1) 65%,
+        rgba(255, 0, 221, 1) 84%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    
+}
