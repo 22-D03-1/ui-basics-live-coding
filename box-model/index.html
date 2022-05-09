@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Modell</title>
+
+    <style>
+        body {
+            padding: 100px;
+        }
+
+        #box-model {
+            margin: 50px;
+            padding: 30px;
+            background: #FF2;
+
+            /*
+            border-width: 5px;
+            border-style: solid;
+            border-color: #00FF00;
+            */
+
+            /* Anstelle der drei separaten Anweisungen können wir auch die Kurzform "border" nutzen */
+            border: 5px solid #00FF00;
+            /* Einzelne Werte lassen sich nachträglich überschreiben */
+            border-bottom-color: #FF0000;
+            border-top-color: #0000FF;
+        }
+
+        #padding-1 {
+            background: #FF2;
+            padding: 20px;
+        }
+
+        #padding-2 {
+            background: #FF2;
+            padding: 20px 50px;
+        }
+
+        #padding-3 {
+            background: #FF2;
+            padding: 20px 50px 30px;
+        }
+
+        #padding-4 {
+            background: #FF2;
+            padding: 20px 50px 30px 10px;
+        }
+
+        #padding-5 {
+            background: #FF2;
+            padding-top: 20px;
+            padding-right: 50px;
+            padding-bottom: 30px;
+            padding-left: 10px;
+        }
+
+        #link {
+            margin: 25px;
+            border: 2px solid #333;
+            padding: 15px;
+        }
+
+        #inline-block li {
+            background: #CCC;
+            display: inline-block;
+            padding: 10px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Beispiele für Block-Elemente</h2>
+    <!-- Block-Elemente nehmen standardmäßig die volle verfügbare Breite ein und erzeugen am Ende einen Zeilenumbruch. Das heißt: Nachfolgende Elemente werden unter dem Block-Element platziert -->
+    <div>div</div>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+    <p>p</p>
+    <main>main</main>
+    <section>Section</section>
+    <article>article</article>
+    <footer>footer</footer>
+    <header>header</header>
+    <blockquote>blockquote</blockquote>
+    <ul>ul</ul>
+    <ol>ol</ol>
+    <li>li</li>
+
+    <!-- Block-Elemente in Text, bzw. Inline-Elementen ist nicht erlaubt und kann zu Darstellungsproblemen führen. Schaue dir dazu das HTML im Browser an. Der Browser wird versuchen, die Tags zu "korrigieren" -->
+    <p>
+        Lorem ipsum dolor sit, amet <h3>consectetur adipisicing elit</h3>. Sapiente, debitis. Illo ab veritatis vel tempore, <div>ipsum consequatur maiores asperiores</div> recusandae fugiat consequuntur qui aperiam minima unde quia laudantium vitae voluptates!
+    </p>
+
+    <h2>Beispiele für Inline-Elemente</h2>
+    <!-- Inline-Elemente sind standardmäßig nur so groß wie ihr Inhalt und erzeugen keinen Zeilenumbruch. Nachfolgende Elemente werden rechts neben dem Inline-Element platziert -->
+    <span>span</span>
+    <a href="#">a</a>
+    <select>
+        <option value="1" selected>select</option>
+    </select>
+    <svg height="130" width="200">
+        <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+        <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+    </svg>
+    <strong>strong</strong>
+    <img src="https://images.unsplash.com/photo-1651925308990-2c3d2d575e93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" width="100">
+    <em>em</em>
+    <mark>mark</mark>
+
+    <!-- Inline-Elemente können in Block-Elementen und anderen Inline-Elementen platziert werden. -->
+    <p>
+        Lorem ipsum dolor sit amet <strong>consectetur <a href="#">adipisicing</a> elit</strong>. Quam inventore assumenda dolore <mark>architecto soluta sit repudiandae qui quisquam</mark> nam nostrum asperiores et ipsa, provident earum nihil eaque error? Iusto, molestias!
+    </p>
+
+
+    <h2>Box-Modell</h2>
+
+    <!-- Mittels CSS lassen sich Größe, Außen- und Innenabstand sowie die Umrandung bestimmen -->
+    <div id="box-model">Box-Modell</div>
+    <div id="padding-1">Padding 1</div>
+    <div id="padding-2">Padding 2</div>
+    <div id="padding-3">Padding 3</div>
+    <div id="padding-4">Padding 4</div>
+    <div id="padding-5">Padding 5</div>
+
+    <!--
+        Zwar können wir margin und padding auch bei Inline-Elementen anwenden, allerdings wirken sich diese anders auf die umliegenden Elemente aus.
+        Bitte sieh im Browser nach, wie Margin top und bottom ignoriert werden und Padding top und bottom über die Zeilen hinausragen, ohne sie zu verschieben.
+    -->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. <a id="link" href="#">Click me</a> Nisi voluptatem asperiores aspernatur quo, ducimus ratione aliquam doloremque accusantium natus pariatur, laboriosam sunt nobis facilis ipsam, cum voluptates delectus excepturi dolore!
+    </p>
+
+    <!--
+        Mittels display: inline-block bekommen wir ein Verhalten hin, bei dem die Elemente wie Inline-Elemente nebeneinander platziert werden.
+        Gleichzeitig können wir aber Margin, Padding, Width und Height wie bei Block-Elementen verwenden.
+    -->
+    <ul id="inline-block">
+        <li>Test 1</li>
+        <li>Test 2</li>
+        <li>Test 3</li>
+        <li>Test 4</li>
+        <li>Test 5</li>
+    </ul>
+</body>
+</html>
