@@ -75,11 +75,22 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, facere? Ducimus pariatur reprehenderit debitis aperiam quasi adipisci placeat facere, soluta ad modi eos repellendus sunt rerum ratione et velit eius.</p>
     </section>
 
+    <!--
+        Mittels position: relative und den Angaben top, right, bottom und left lässt sich ein Element von seiner Urprungsposition verschieben.
+        Der Bereich an der Urprungsposition innerhalb des Elternelements wird durch das Verschieben nicht verändert, der Bereich bleibt für das Element "reserviert".
+        Das verschobene Element kann andere Elemente überlappen, es beeinflusst die Position anderer Elemente nicht.
+     -->
     <section class="modal">
         <div id="pos-relative">Position Relative</div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non adipisci itaque veniam quidem dolor saepe iusto unde fuga tempora, rem nemo ad esse aspernatur architecto sint hic cumque deserunt reiciendis.</p>
     </section>
 
+    <!--
+        Benutzen wir position: absolute, muss das Elternelement eine Positionierung anders als "static" (Standardwert) erhalten.
+        In dem folgenden Beispiel ist das nicht passiert. Das div mit der ID pos-absolute nimmt dadurch das nächsthöhere Element mit der passenden Positionierung als Basis.
+        Hier geht dies rauf bis zum Body, wodurch das div oben links im Viwport erscheint.
+        Mit position: absolute wird kein Platz im Elternelement reserviert. Ein absolut positioniertes Element schwebt sozusagen über dem Inhalt.
+    -->
     <section class="modal">
         <div id="pos-absolute">Position Absolute</div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non adipisci itaque veniam quidem dolor saepe iusto unde fuga tempora, rem nemo ad esse aspernatur architecto sint hic cumque deserunt reiciendis.</p>
