@@ -15,10 +15,11 @@ header {
     top: 0;
     background-color: black;
     color: white;
+    z-index: 100;
 }
 
 main {
-    padding-top: 6rem;
+    padding-top: 80px;
     padding-bottom: 4rem;
 }
 
@@ -29,13 +30,37 @@ footer {
     bottom: 0;
     width: 100%;
     word-spacing: 1rem;
+    letter-spacing: 0.25rem;
 }
 
 footer ul li {
+    color: white;
     display: inline-block;
 }
 
 a {
     color: white;
     text-decoration: none;
+}
+
+h2 {
+    position: sticky;
+    top: 80px;
+    background-color: red;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    width: 3000px;
+    padding-left: 500px;
+}
+
+img {
+    width: 150px;
+    position: sticky;
+    left: 10px;
 }

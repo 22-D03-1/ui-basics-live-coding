@@ -1,0 +1,39 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+}
+
+.box {
+    color: white;
+    padding: 1rem;
+    position: absolute;
+}
+
+.box-1 {
+    /* Elemente auf der Z-Achse verschieben */
+    /* Je höher die Zahl desto höher liegt das Element */
+    z-index: 52;
+    width: 100px;
+    aspect-ratio: 1/1;
+    background-color: red;
+}
+
+.box-2 {
+    /* Bei gleichem Z-Index werden Elemente wieder nach Reihenfolge im HTML angeordnet */
+    z-index: 51;
+    width: 150px;
+    aspect-ratio: 1/1;
+    background-color: green;
+}
+
+.box-3 {
+    z-index: 50;
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-color: blue;
+}
