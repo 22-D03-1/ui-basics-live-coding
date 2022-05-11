@@ -33,7 +33,7 @@ body {
 
 .box-3 {
     z-index: 50;
-    width: 200px;
+    width: 400px;
     aspect-ratio: 1/1;
     background-color: blue;
 }

@@ -1,0 +1,23 @@
+.box-1 {
+    width: 300px;
+    height: 300px;
+    border: 20px solid black;
+    padding: 40px;
+    background-color: red;
+    /* Mit box-sizing: border-box stellt man ein, 
+    dass width und height die gesamte Breite und Höhe der Box definieren
+    */
+    box-sizing: border-box;
+}
+
+.box-2 {
+    width: 300px;
+    height: 300px;
+    border: 20px solid black;
+    padding: 40px;
+    background-color: blue;
+    /* 
+    Ohne box-sizing: border-box beschreiben width und height 
+    nur den inneren Teil. Padding und Border kommen dann außen drauf:
+    */
+}
