@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadows</title>
+
+    <style>
+        body {
+            padding: 10vw;
+            margin: 0;
+        }
+        .shadows {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10vw;
+            justify-items: stretch;
+            margin-bottom: 100px;
+        }
+        .shadows > div {
+            aspect-ratio: 1;
+            border: 1px solid #cccccc;
+        }
+
+        /*
+            Ein sehr einfacher Schlagschatten.
+            Der erste Wert gibt den Versatz auf der x-Achse an (offset x),
+            der zweite Wert den Versatz auf der y-Achse (offset y).
+            Der dritte Wert bestimmt die Farbe des Schattens.
+         */
+        #shadow-1 {
+            box-shadow: 5px 5px rgb(0, 0, 0);
+        }
+        /*
+            Fügen wir nach den zwei Werten für den Versatz noch einen weiteren ein (blur radius),
+            sorgt dieser dafür, dass unser Schatten weichgezeichnet wird.
+            Die Kante wird in diesem Fall also über 5px "verteilt", bzw. weichgezeichnet.
+        */
+        #shadow-2 {
+            box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.256);
+        }
+        /*
+            Mit dem vierten Wert lässt sich die Größe des Schattens verändern (spread radius).
+        */
+        #shadow-3 {
+            box-shadow: 15px 15px 10px 10px rgba(0, 0, 0, 0.256);
+        }
+        /* Benötigen wir einfache Schatten, reicht uns eine Angabe für box-shadow aus. */
+        #shadow-4 {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+        }
+        /*
+            Sollen die Schatten realistischer erscheinen, arbeiten wir mit mehreren Angaben.
+            Wir fangen dabei beim größten Schatten an (wie in dem Beispiel #shadow-4)
+            und arbeiten uns dann "nach oben", indem wir Offset und Blur schrittweise verringern.
+        */
+        #shadow-5 {
+            box-shadow:
+                1px 1px 2px rgba(0, 0, 0, 0.06),
+                2px 2px 3px rgba(0, 0, 0, 0.06),
+                5px 5px 5px rgba(0, 0, 0, 0.06);
+        }
+        /* Hier in Farbe, wie mehrere Angaben in box-shadow zusammenspielen */
+        #shadow-6 {
+            box-shadow:
+                5px 5px 7px rgba(255, 0, 0, 0.45),
+                10px 10px 12px rgba(0, 255, 0, 0.45),
+                20px 20px 20px rgba(0, 0, 255, 0.45);
+        }
+        /*
+            Negative Werte bewirken jeweils das Gegenteil.
+            Blur kann nicht negativ sein.
+        */
+        #shadow-7 {
+            box-shadow: -15px -15px 0 -10px rgba(0, 0, 0, 0.256);
+        }
+        /* Schatten lassen sich auch im Element erzeugen mittels "inset" */
+        #shadow-8 {
+            box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+        }
+        #shadow-9 {
+            background: #333;
+            box-shadow:
+                inset 0 0 4px rgba(238, 230, 217, 0.6),
+                inset 0 0 8px rgba(238, 230, 217, 0.6),
+                inset 0 0 12px rgba(238, 230, 217, 0.6);
+        }
+
+        /* Schatten sollten möglichst von der gleichen Lichtquelle stammen. */
+        #shadow-10 {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+        }
+        #shadow-11 {
+            box-shadow: 5px 15px 5px rgba(0, 0, 0, 0.1);
+        }
+        #shadow-12 {
+            box-shadow: 15px 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /*
+            Bei farbigen Elementen ist darauf zu achten, dass Schatten diese Farbe nutzen.
+            Wir können dafür den Farbraum HSL nutzen, um die Abstufungen besser berechnen zu können.
+        */
+        #shadow-13 {
+            background: #339966;
+            border: none;
+            box-shadow:
+                1px 1px 2px hsla(150, 50%, 40%, 0.2),
+                2px 2px 3px hsla(150, 50%, 40%, 0.2),
+                5px 5px 5px hsla(150, 40%, 40%, 0.2),
+                8px 8px 8px hsla(150, 0%, 60%, 0.2),
+                12px 12px 12px hsla(150, 0%, 80%, 0.2);
+        }
+        /* Ein reiner Grauton für die Schatten sieht nicht realistisch aus. */
+        #shadow-14 {
+            background: #339966;
+            border: none;
+            box-shadow:
+                1px 1px 2px rgba(0,0,0,0.1),
+                2px 2px 3px rgba(0,0,0,0.1),
+                5px 5px 5px rgba(0,0,0,0.1),
+                8px 8px 8px rgba(0,0,0,0.1),
+                12px 12px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Klassen für Schatten helfen uns, die Richtung des Lichts beizubehalten und zentral zu steuern. */
+        .box-shadow {
+            box-shadow:
+                1px 1px 2px rgba(0, 0, 0, 0.16),
+                2px 2px 3px rgba(0, 0, 0, 0.16),
+                5px 5px 5px rgba(0, 0, 0, 0.16);
+        }
+
+        .elevation-1 {
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+        }
+        .elevation-2 {
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <section class="shadows">
+        <div id="shadow-1"></div>
+        <div id="shadow-2"></div>
+        <div id="shadow-3"></div>
+        <div id="shadow-4"></div>
+        <div id="shadow-5"></div>
+        <div id="shadow-6"></div>
+        <div id="shadow-7"></div>
+        <div id="shadow-8"></div>
+        <div id="shadow-9"></div>
+        <div id="shadow-10"></div>
+        <div id="shadow-11"></div>
+        <div id="shadow-12"></div>
+        <div id="shadow-13"></div>
+        <div id="shadow-14"></div>
+    </section>
+    <section class="shadows">
+        <div class="elevation-1"></div>
+        <div class="elevation-2"></div>
+        <div class="box-shadow"></div>
+        <div class="box-shadow"></div>
+        <div class="box-shadow"></div>
+        <div class="box-shadow"></div>
+        <div class="box-shadow"></div>
+        <div class="box-shadow"></div>
+        <div class="box-shadow"></div>
+        <div class="box-shadow"></div>
+        <div class="box-shadow"></div>
+        <div class="box-shadow"></div>
+    </section>
+</body>
+</html>
