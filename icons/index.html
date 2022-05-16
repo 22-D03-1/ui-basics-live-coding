@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icons</title>
+    <!-- dieses Script erzeugt das benötigte CSS für die FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/ea222fa74f.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Font Icons verhalten sich wie normaler Text und lassen sich über entsprechende Properties steuern. */
+        body, a {
+            color: rgb(0, 0, 170);
+        }
+
+        /*
+            Mit der Property content können wir einem Pseudo-Element einen Inhalt geben.
+            In diesem Beispiel haben wir nur ein "i" verwendet, wir können aber sogar auch encodierte Zeichen verwenden, was Sonderzeichen möglich macht (oder im Falle einer Icon Font auch Icons).
+        */
+        span.custom-info:before {
+            display: inline-block;
+            content: "i";
+            font-weight: 900;
+            margin-right: 5px;
+        }
+
+        h2 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://facebook.com" title="Facebook" target="_blank">
+        <!-- Um ein Icon von FontAwesome verwenden zu können, benötigen wir lediglich die passenden Klassen. Diese finden sich mit dem Tag auf der Seite https://fontawesome.com/search?m=free -->
+        <i class="fa-brands fa-facebook-f"></i> Facebook
+    </a>
+    <br>
+    <br>
+    <i class="fa-brands fa-accessible-icon"></i>
+    <br>
+    <br>
+    <a href="#">
+        <span class="custom-info"></span>Info
+    </a>
+
+    <!--
+        Da das ganze HTML-Dokument ein bestimmtes Encoding verwendet (siehe head-> meta charset), können wir Zeichen "im Klartext" schreiben.
+        Sie lassen sich aber auch mit ihrem entsprechenden Code verwenden.
+        In HTML sind solche "Entities" mit einem & am Anfang und einem ; am Ende gekennzeichnet.
+    -->
+    <article>
+        <h2>
+            <i class="fa-solid fa-newspaper"></i>
+            &#66;reaking News!&#174;
+        </h2>
+        <p>
+            Ü - &Uuml;
+        </p>
+    </article>
+</body>
+</html>
