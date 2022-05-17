@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designing with colors</title>
+
+    <style>
+        /*
+            Wenn wir die Faben weiterverwenden wollen, können wir Variablen in CSS einrichten.
+            Auf diese lässt sich mittels var() zugreifen.
+
+            Als Richtwert können wir drei Farben verwenden, die wir in Primary, Secondary und Accent Colors einteilen.
+            Mehr oder weniger Farben sind natürlich auch möglich, wenn es zur Gestaltung der Website passt.
+
+            Damit wir ein möglichst harmonisches Bild erhalten, können wir bei der Verwendung der Farben auf folgendes Verhältnis achten:
+            60 / 30 / 10
+
+            60% => Primary
+            30% => Secondary
+            10% => Accent
+        */
+        :root {
+            --primary: #001a23;
+            --secondary: #E7C9A6;
+            --accent: #fb493d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Hier verwenden wir die Variable --primary mit der Primärfarbe */
+            color: var(--primary);
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            line-height: 61px;
+            color: #FFF;
+            text-align: center;
+            background: var(--primary);
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 30px;
+            border: none;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        section {
+            max-width: 450px;
+            margin: 50px auto;
+            border: 20px solid var(--secondary);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        section button {
+            margin-top: 1em;
+            border-radius: 5px;
+        }
+
+        .hint {
+            color: var(--accent);
+            padding: 5px 0;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+
+        .primary-button {
+            border: 1px solid var(--primary);
+            background: var(--primary);
+            color: #FFF;
+        }
+        /*
+            Dieser Button soll sich dem primary-button unterordnen.
+            Das schaffen wir, indem wir bspw. nur eine Border verwenden, statt ihn voll einzufärben.
+        */
+        .secondary-button {
+            border: 1px solid var(--primary);
+            background: transparent;
+        }
+        /*
+            Soll sich ein Button noch weiter unterordnen, können wir auch auf die Border verzichten
+            und aus ihm stattdessen einen "Text-Button" machen.
+        */
+        .text-button {
+            background: transparent;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Header
+    </header>
+
+    <section>
+        <h2>Subscribe!</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, dolores labore voluptates aliquam, possimus accusamus expedita adipisci sed consectetur quaerat reprehenderit alias magnam earum veritatis, laudantium ducimus esse architecto eaque.
+        </p>
+        <p class="hint">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, dolores labore voluptates aliquam, possimus accusamus expedita adipisci sed consectetur quaerat reprehenderit alias magnam earum veritatis, laudantium ducimus esse architecto eaque.
+        </p>
+
+        <button class="primary-button">Subscribe now</button>
+        <button class="secondary-button">Skip</button>
+        <button class="text-button">Cancel</button>
+    </section>
+</body>
+</html>
