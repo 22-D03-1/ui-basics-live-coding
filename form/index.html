@@ -7,32 +7,46 @@
         <title>Formular</title>
     </head>
     <body>
-        <form action="">
+        <!-- An die Adresse in Action werden die Daten geschickt -->
+        <form action="https://formspree.io/f/xqknwnrr" method="post">
             <label>
                 Vorname:
-                <input type="text" placeholder="Vorname eingeben" required />
+                <input
+                    type="text"
+                    name="vorname"
+                    placeholder="Vorname eingeben"
+                    required
+                />
             </label>
             <br />
             <label>
                 Alter:
-                <input type="number" placeholder="Alter eingeben" required />
+                <input
+                    type="number"
+                    placeholder="Alter eingeben"
+                    name="alter"
+                    required
+                />
             </label>
             <br />
             <label>
                 Deine Nachricht:
-                <textarea placeholder="An uns" required></textarea>
+                <textarea
+                    placeholder="An uns"
+                    required
+                    name="nachricht"
+                ></textarea>
             </label>
             <br />
             <label>
                 Dein Lieblingstier:
-                <select required>
+                <select required name="lieblingstier">
                     <option value="Katze">Katze</option>
                     <option value="Hund">Hund</option>
                     <option value="Tiger">Tiger</option>
                     <option value="Bär">Bär</option>
-                </select>
-            </label>
-            <br />
+                </select> </label
+            ><br />
             <button type="submit">Absenden</button>
             <button type="reset">Resetten</button>
         </form>
