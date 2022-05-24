@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+
+    <style>
+        :root {
+            --content-width: 900px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 20px 10px;
+            color: #FFF;
+            background: #111;
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*
+            Wir können auch ohne Media Queries unsere Seitenelemente responsiv gestalten,
+            indem wir bspw. max-width verwenden und die width mit einem relativen Wert bestimmen (Default: 100%, geht also auch ohne explizite Angabe)
+        */
+        header > div {
+            width: 90%;
+            max-width: var(--content-width);
+            margin: auto;
+        }
+        section, footer {
+            border: 1px solid #CCC;
+            margin: 20px auto;
+            padding: 10px;
+            width: 90%;
+            max-width: var(--content-width);
+        }
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        #hero {
+            display: flex;
+            color: #F62;
+            flex-direction: column;
+        }
+        /*
+            Mit den Media Queries stellen wir Bedingungen, wann die zusätzlichen Regeln angewandt werden sollen.
+            min-width und max-width beziehen sich auf die Breite des Viewports.
+        */
+        @media (min-width: 580px) and (max-width: 610px) {
+            #hero {
+                color: blue;
+                flex-direction: row;
+            }
+            #hero img {
+                width: 40%;
+                margin-right: 10px;
+            }
+        }
+
+        /*
+            Bei mobile-first gehen wir vom kleinsten Viewport aus und definieren die Styles dafür wie gewohnt.
+            Anschließend gestalten wir mit Media Queries die nächstgrößeren Viewports, die zusätzliches Styling benötigen.
+            Die sog. Breakpoints können wir anhand von Standardwerten definieren.
+            Besser ist der Ansatz, die Breakpoints immer dort zu setzen, wo es vom Layout her notwendig wird.
+        */
+        .flexbox {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flexbox > div {
+            box-sizing: border-box;
+            width: 100%;
+        }
+        @media (min-width: 480px) {
+            .flexbox > div {
+                width: calc(100% / 2);
+                padding: 10px;
+            }
+        }
+        @media (min-width: 720px) {
+            .flexbox > div {
+                width: calc(100% / 3);
+                border: 1px solid red;
+            }
+        }
+
+        /*
+            Bei desktop-first bestimmen wir die Styles für den größten Viewport zuerst.
+            Anschließend müssen diese Styles durch Media Queries zurückgesetzt werden, was ggf. zu Problemem führen kann.
+            Mobile-first ist daher in der Regel vorzuziehen.
+        */
+        .flexbox-2 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flexbox-2 > div {
+            width: calc(100% / 3);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid red;
+        }
+
+        @media (max-width: 400px) {
+            .flexbox-2 > div {
+                width: 100%;
+                padding: 0;
+                border: none;
+                border-radius: 0;
+            }
+        }
+
+        /*
+            Media Queries lassen sich auch benutzen, um das Styling auf das Ausgabemedium anzupassen.
+            Mit "only print" lassen sich Styles speziell für das Drucken einer Seite definieren.
+            So könnten bspw. dunkle Hintergründe zurückgesetzt werden, um Druckertinte oder Toner zu sparen.
+        */
+        /* body {
+            background: #667;
+        } */
+        /* @media only screen {} */
+
+        @media only print {
+            body {
+                background: #FFF;
+            }
+            img {
+                display: none;
+            }
+            section {
+                width: 100mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            Logo
+        </div>
+    </header>
+
+    <section id="hero">
+        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500" alt="Cinema">
+
+        <div>
+            <h2>Hero Image</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloremque facilis voluptates sit quam sunt totam delectus amet? Quibusdam ipsam, culpa autem iusto temporibus aliquid voluptatibus. Unde atque molestias cumque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloremque facilis voluptates sit quam sunt totam delectus amet? Quibusdam ipsam, culpa autem iusto temporibus aliquid voluptatibus. Unde atque molestias cumque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloremque facilis voluptates sit quam sunt totam delectus amet? Quibusdam ipsam, culpa autem iusto temporibus aliquid voluptatibus. Unde atque molestias cumque.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Popular Movies - mobile-first</h2>
+        <div class="flexbox">
+            <div>
+                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNpbmVtYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNpbmVtYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGNpbmVtYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGNpbmVtYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+        </div>
+
+        <h2>Popular Movies - desktop-first</h2>
+        <div class="flexbox-2">
+            <div>
+                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNpbmVtYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNpbmVtYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGNpbmVtYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGNpbmVtYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500" alt="">
+                <h3>Filmtitel</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Footer
+    </footer>
+</body>
+</html>
