@@ -7,12 +7,28 @@ body {
     height: 100%;
 }
 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(229, 18, 46, 1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 input:focus {
     outline: none;
 }
 
 input::placeholder {
     color: hsl(360, 0%, 75%);
+}
+
+input:placeholder-shown {
+    background-color: red;
 }
 
 button:disabled {

@@ -1,233 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flexbox</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        div {
-            background: #CCC;
-            padding: 20px;
-            border: 1px solid #AAA;
-        }
-        section {
-            background: #FCC;
-            margin: 20px;
-        }
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            div {
+                background: #ccc;
+                padding: 20px;
+                border: 1px solid #aaa;
+            }
+            section {
+                background: #fcc;
+                margin: 20px;
+            }
 
-        #inline-block div {
-            display: inline-block;
-        }
+            #inline-block div {
+                display: inline-block;
+            }
 
-        #floating div {
-            float: right;
-        }
-        #floating:after {
-            content: "";
-            display: block;
-            clear: both;
-        }
+            #floating div {
+                float: right;
+            }
+            #floating:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
 
-        #flexbox {
-            display: flex;
-        }
+            #flexbox {
+                display: flex;
+            }
 
-        #flexbox-right-align {
-            display: flex;
-            justify-content: end;
-        }
+            #flexbox-right-align {
+                display: flex;
+                justify-content: end;
+            }
 
-        #flexbox-center {
-            display: flex;
-            justify-content: center;
-        }
+            #flexbox-center {
+                display: flex;
+                justify-content: center;
+            }
 
-        #flexbox-space-between {
-            display: flex;
-            justify-content: space-between;
-        }
+            #flexbox-space-between {
+                display: flex;
+                justify-content: space-between;
+            }
 
-        #flexbox-space-around {
-            display: flex;
-            justify-content: space-around;
-        }
+            #flexbox-space-around {
+                display: flex;
+                justify-content: space-around;
+            }
 
-        #flexbox-wrap {
-            display: flex;
-            flex-wrap: wrap;
-        }
+            #flexbox-wrap {
+                display: flex;
+                flex-wrap: wrap;
+            }
 
-        #flexbox-vertical-center {
-            display: flex;
-            height: 200px;
-            /* align-items: flex-start; */
-            /* align-items: flex-end; */
-            align-items: center;
-        }
+            #flexbox-vertical-center {
+                display: flex;
+                height: 200px;
+                /* align-items: flex-start; */
+                /* align-items: flex-end; */
+                align-items: center;
+            }
 
-        #flexbox-example-login {
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #flexbox-example-login form {
-            max-width: 280px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.4);
-        }
+            #flexbox-example-login {
+                height: 400px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #flexbox-example-login form {
+                max-width: 280px;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.4);
+            }
 
-        #flexbox-navbar {
-            display: flex;
-        }
-        .spacer {
-            flex-grow: 9999;
-        }
+            #flexbox-navbar {
+                display: flex;
+            }
+            .spacer {
+                flex-grow: 9999;
+            }
 
-        #flexbox-navbar-2 {
-            display: flex;
-            justify-content: space-between;
-        }
-        #flexbox-navbar-2 nav {
-            display: flex;
-        }
-    </style>
-</head>
-<body>
-    <section id="inline-block">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-    </section>
+            #flexbox-navbar-2 {
+                display: flex;
+                justify-content: space-between;
+            }
+            #flexbox-navbar-2 nav {
+                display: flex;
+            }
 
-    <section id="floating">
-        <!-- before -->
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <!-- after -->
-    </section>
+            #flex-direction {
+                display: flex;
+                flex-direction: column;
+            }
 
-    <section id="flexbox">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-    </section>
+            #flex-grow {
+                display: flex;
+            }
 
-    <section id="flexbox-right-align">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-    </section>
+            #flex-grow div:nth-child(2) {
+                flex-grow: 1;
+                background-color: white;
+            }
 
-    <section id="flexbox-center">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-    </section>
+            #flex-shrink {
+                display: flex;
+            }
 
-    <section id="flexbox-space-between">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-    </section>
+            #flex-shrink div {
+                width: 300px;
+                flex-shrink: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="inline-block">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
 
-    <section id="flexbox-space-around">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-    </section>
+        <section id="floating">
+            <!-- before -->
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <!-- after -->
+        </section>
 
-    <section id="flexbox-wrap">
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-        <div>x</div>
-    </section>
+        <section id="flexbox">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
 
-    <section id="flexbox-vertical-center">
-        <div>1<br>1a</div>
-        <div>2</div>
-        <div>3<br>3<br>3<br>3</div>
-        <div>4</div>
-        <div>5</div>
-    </section>
+        <section id="flexbox-right-align">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
 
-    <section id="flexbox-example-login">
-        <form>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nostrum quibusdam repellendus ex ad sapiente maiores quo pariatur! Blanditiis harum ea officiis expedita laudantium assumenda id qui aspernatur accusantium commodi.</p>
-            <input type="submit" value="Submit" />
-        </form>
-    </section>
+        <section id="flexbox-center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
 
-    <section id="flexbox-navbar">
-        <div>LOGO</div>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <span class="spacer"></span>
-        <div>Login</div>
-    </section>
+        <section id="flexbox-space-between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
 
-    <section id="flexbox-navbar-2">
-        <nav>
+        <section id="flexbox-space-around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
+
+        <section id="flexbox-wrap">
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+            <div>x</div>
+        </section>
+
+        <section id="flexbox-vertical-center">
+            <div>1<br />1a</div>
+            <div>2</div>
+            <div>3<br />3<br />3<br />3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
+
+        <section id="flexbox-example-login">
+            <form>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et
+                    nostrum quibusdam repellendus ex ad sapiente maiores quo
+                    pariatur! Blanditiis harum ea officiis expedita laudantium
+                    assumenda id qui aspernatur accusantium commodi.
+                </p>
+                <input type="submit" value="Submit" />
+            </form>
+        </section>
+
+        <section id="flexbox-navbar">
             <div>LOGO</div>
             <div>1</div>
             <div>2</div>
             <div>3</div>
             <div>4</div>
             <div>5</div>
-        </nav>
-        <div>Login</div>
-    </section>
-</body>
+            <span class="spacer"></span>
+            <div>Login</div>
+        </section>
+
+        <section id="flexbox-navbar-2">
+            <nav>
+                <div>LOGO</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+            </nav>
+            <div>Login</div>
+        </section>
+
+        <section id="flex-direction">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
+
+        <section id="flex-grow">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
+
+        <section id="flex-shrink">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
+    </body>
 </html>
