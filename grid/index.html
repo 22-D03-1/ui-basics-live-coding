@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+
+    <style>
+        #section-1 {
+            display: grid;
+            grid-template-columns: 100px 200px 300px;
+            grid-template-rows: 20px 20px 20px;
+        }
+
+        #section-2 {
+            display: grid;
+            grid-template-columns: 100px 200px 300px;
+            grid-template-rows: repeat(16, 20px);
+        }
+
+        #section-3 {
+            display: grid;
+            grid-template-columns: 100px 200px 300px;
+            grid-template-rows: 60px repeat(4, 20px);
+        }
+
+        #section-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(4, 20px);
+        }
+
+        #section-5 {
+            height: 200px;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 2fr repeat(2, 1fr) repeat(4, 10px);
+        }
+
+        #section-6 {
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            grid-template-rows: repeat(10, 40px);
+            /* column-gap: 5px;
+            row-gap: 5px; */
+            gap: 5px;
+        }
+        #section-6 div {
+            background: black;
+        }
+        #section-6 #dimensions-test {
+            width: 80px;
+            height: 60px;
+            background: red;
+        }
+        #section-6 #position-test-1 {
+            grid-column-start: 6;
+            grid-row-start: 4;
+        }
+        #section-6 #position-test-2 {
+            grid-column-start: 7;
+            grid-column-end: 9;
+            grid-row-start: 7;
+            grid-row-end: 9;
+        }
+        #section-6 #position-test-3 {
+            grid-column-start: 4;
+            grid-column-end: -1;
+            grid-row-start: 5;
+        }
+    </style>
+</head>
+<body>
+    <section id="section-1">
+    </section>
+
+    <section id="section-2">
+    </section>
+
+    <section id="section-3">
+    </section>
+
+    <section id="section-4">
+    </section>
+
+    <section id="section-5">
+    </section>
+
+    <section id="section-6">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div id="dimensions-test"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div id="position-test-2"></div>
+        <div></div>
+        <div id="position-test-3"></div>
+        <div></div>
+        <div id="position-test-1"></div>
+        <div></div>
+    </section>
+</body>
+</html>
