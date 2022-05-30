@@ -9,6 +9,10 @@
     <style>
         #section-1 {
             display: grid;
+            /*
+                mittels grid-template-colums/-rows bestimmen wir die Größen der Spalten und Zeilen.
+                In diesem Beispiel verwenden wir absolute Werte und haben drei Spalten und drei Zeilen.
+            */
             grid-template-columns: 100px 200px 300px;
             grid-template-rows: 20px 20px 20px;
         }
@@ -16,17 +20,30 @@
         #section-2 {
             display: grid;
             grid-template-columns: 100px 200px 300px;
+            /*
+                Um gleiche Werte nicht mehrfach schreiben zu müssen, können wir dise mit der Funktion repeat() wiederholen.
+                Dabei geben wir an, wie oft etwas wiederholt werden soll, und anschließend den zu wiederholenden Wert.
+                Dieses Beispiel erzeugt 16 Zeilen mit jeweils 20px Höhe.
+            */
             grid-template-rows: repeat(16, 20px);
         }
 
         #section-3 {
             display: grid;
             grid-template-columns: 100px 200px 300px;
+            /* repeat() und einzelne Werte lassen sich problemlos kombinieren */
             grid-template-rows: 60px repeat(4, 20px);
         }
 
         #section-4 {
             display: grid;
+            /*
+                Um den Grid Container mit der verfügbaren Fläche dynamisch aufzuteilen, verwenden wir Fractions (fr).
+                Diese teilen unseren Container in gleichmäßig große Stücke, die wir für unsere Aufteilung nutzen können.
+                Stellt euch eine Torte vor, die ihr in gleichmäßig große Stücke schneidet.
+                Jedes Stück ist dabei 1fr. Eure Gäste sind die Columns und Rows: Manche essen mehr als ein Stück (2fr, 3fr),
+                und nehmen damit mehr von der Torte weg.
+            */
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(4, 20px);
         }
@@ -42,29 +59,59 @@
             display: grid;
             grid-template-columns: repeat(10, 40px);
             grid-template-rows: repeat(10, 40px);
+            /*
+                Für den Abstand zwischen Columns und Rows lassen sich die properties column-gap und row-gap verwenden.
+                Alternativ können wir beide unter der Property gap zusammenfassen.
+                Hierbei sind ein oder zwei Angaben möglich.
+            */
             /* column-gap: 5px;
             row-gap: 5px; */
             gap: 5px;
         }
         #section-6 div {
+            /*
+                Standardmäßig werden die Children der Reihe nach in einzelne Zellen platziert.
+                Dabei wird oben links begonnen und nach rechts befüllt.
+                Ist die Zeile voll, geht es mit der nachfolgenden Zeile weiter.
+            */
             background: black;
         }
         #section-6 #dimensions-test {
+            /*
+                Das Grid behält seine Form auch wenn ein Child Element zu groß ist, um in eine Zelle zu passen.
+                Das zu große Element wird in seiner Größe dargestellt, aber von den nachfolgenden Elementen im Grid überlappt.
+            */
             width: 80px;
             height: 60px;
             background: red;
         }
         #section-6 #position-test-1 {
+            /*
+                Wir können Elemente an eine ganz bestimmte Position in unserem Grid stellen.
+                Dazu können wir mit den Properties grid-column-start und grid-row-start angeben, von welcher "Kreuzung" das Element beginnt.
+                Wenn wir unser Raster zeichnen, dann zählen wir die Linien von links nach rechts und von oben nach unten durch.
+                Die äußersten Linien, die quasi den Rahmen des Grids bilden, fangen mit 1 an.
+                Dort, wo sich zwei Linien kreuzen, lassen sich die Elemente dann platzieren.
+            */
             grid-column-start: 6;
             grid-row-start: 4;
         }
         #section-6 #position-test-2 {
+            /*
+                Soll sich unser Child Element über mehr als nur eine Zelle erstrecken, können wir mit
+                grid-column-end und grid-row-end das Ende bestimmen.
+                Unser Element nimmt dann sämtliche Zellen des Grids ein, die zwischen diesen zwei Koordinaten liegen.
+            */
             grid-column-start: 7;
             grid-column-end: 9;
             grid-row-start: 7;
             grid-row-end: 9;
         }
         #section-6 #position-test-3 {
+            /*
+                Wir können auch von unten rechts mit unseren Koordinaten beginnen.
+                Dort wenden wir das gleiche Prinzip an, allerdings sind die Werte dann negativ, wir fangen also bei -1 an.
+            */
             grid-column-start: 4;
             grid-column-end: -1;
             grid-row-start: 5;
