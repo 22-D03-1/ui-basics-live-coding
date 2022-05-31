@@ -53,12 +53,16 @@
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
             grid-template-rows: 2fr repeat(2, 1fr) repeat(4, 10px);
+
+            /* grid-template: 2fr repeat(2, 1fr) repeat(4, 10px) / 1fr 2fr 1fr;  */
         }
 
         #section-6 {
             display: grid;
-            grid-template-columns: repeat(10, 40px);
-            grid-template-rows: repeat(10, 40px);
+            /* grid-template-columns: repeat(10, 40px);
+            grid-template-rows: repeat(10, 40px); */
+            grid-template: repeat(10, 40px) / repeat(10, 40px);
+
             /*
                 Für den Abstand zwischen Columns und Rows lassen sich die properties column-gap und row-gap verwenden.
                 Alternativ können wir beide unter der Property gap zusammenfassen.
@@ -102,10 +106,13 @@
                 grid-column-end und grid-row-end das Ende bestimmen.
                 Unser Element nimmt dann sämtliche Zellen des Grids ein, die zwischen diesen zwei Koordinaten liegen.
             */
-            grid-column-start: 7;
-            grid-column-end: 9;
-            grid-row-start: 7;
-            grid-row-end: 9;
+            /* grid-column-start: 7;
+            grid-column-end: 9; */
+            /* grid-row-start: 7;
+            grid-row-end: 9; */
+
+            grid-row: 7 / 9;
+            grid-column: 7 / 9;
         }
         #section-6 #position-test-3 {
             /*
@@ -115,6 +122,26 @@
             grid-column-start: 4;
             grid-column-end: -1;
             grid-row-start: 5;
+        }
+
+        #section-6 #position-test-4 {
+            /*
+                Mittels span können wir ein Element über mehrere Zellen strecken ("aufspannen").
+            */
+            grid-row: 7 / span 2;
+            grid-column: 4 / span 3;
+        }
+
+        #section-7 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* grid-template-rows: 40px 40px 40px 40px; */
+            grid-auto-rows: 40px;
+            gap: 10px;
+        }
+        #section-7 div {
+            background: green;
+            /* min-height: 20px; */
         }
     </style>
 </head>
@@ -136,7 +163,7 @@
 
     <section id="section-6">
         <div></div>
-        <div></div>
+        <div id="position-test-4"></div>
         <div></div>
         <div id="dimensions-test"></div>
         <div></div>
@@ -147,6 +174,25 @@
         <div id="position-test-3"></div>
         <div></div>
         <div id="position-test-1"></div>
+        <div></div>
+    </section>
+
+    <section id="section-7">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
         <div></div>
     </section>
 </body>

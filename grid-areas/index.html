@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Areas</title>
+
+    <style>
+        body {
+            display: grid;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            grid-template-rows: 60px 1fr 60px;
+            /* minmax() passt die Größe automatisch an, indem es den kleineren Wert als Mindestgröße verwendet und den größeren als Maximalgröße. */
+            grid-template-columns: minmax(200px, 25vw) repeat(3, 1fr) minmax(200px, 25vw);
+            /*
+                Mit grid-template-areas können wir einzelne Zellen zu Bereichen zuordnen und diese sogar benennen.
+                Jede Zeile (oder String ("...")) steht dabei für eine Zeile in unserem Grid.
+                In jede Zeile schreiben wir die Namen entsprechend der Anzahl der Spalten.
+                Wollen wir einen Bereich frei lassen, nutzen wir als Platzhalter einen Punk . oder Bindestrich -
+            */
+            grid-template-areas:
+                "header  header  header   header   header"
+                "left    main    main     main     right"
+                "footer  footer  footer   footer   footer";
+        }
+
+        @media (max-width: 800px) {
+            body {
+                grid-template-rows: 60px repeat(3, 1fr) 60px;
+                grid-template-columns: 1fr;
+                grid-template-areas: none;
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "left"
+                    "right"
+                    "footer";
+            }
+        }
+
+        header {
+            background: green;
+            /*
+                Bei der Platzierung der Elemente können wir nun auf Koordinaten verzichten und stattdessen mittels grid-area den Namen des Bereichs auswählen.
+                Dadurch müssen wir die Reihenfolge der Elemente in HTML nicht berücksichtigen.
+                Außerdem können wir responsive Anpassungen auf den Grid Container beschränken und müssen die Child Elemente nicht neu platzieren.
+            */
+            /* grid-column: span 3; */
+            /* grid-column: 1 / -1; */
+            grid-area: header;
+        }
+
+        footer {
+            background: black;
+            color: #FFF;
+            grid-area: footer;
+            /* grid-column: 1 / -1; */
+        }
+
+        aside {
+            background: blue;
+            color: #FFF;
+        }
+
+        aside#left {
+            grid-area: left;
+        }
+        aside#right {
+            grid-area: right;
+        }
+
+        main {
+            background: yellow;
+            grid-area: main;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+
+    <main>Main</main>
+
+    <aside id="left">Sidebar left</aside>
+    <aside id="right">Sidebar right</aside>
+
+    <footer>Footer</footer>
+</body>
+</html>
