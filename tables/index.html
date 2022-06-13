@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabellen</title>
+
+    <style>
+        table {
+            border-spacing: 0;
+        }
+
+        thead {
+            background: blue;
+            color: #FFF;
+        }
+
+        th,
+        td {
+            padding: 4px;
+            border-bottom: 1px solid #CCC;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tabellen</h1>
+
+    <table>
+        <!-- Mit der Caption beschreiben wir den Inhalt der Tabelle -->
+        <caption>Testdaten erstes Quartal 2022</caption>
+
+        <!-- thead: table header -->
+        <thead>
+            <tr>
+                <!-- th: table head -->
+                <th>ID</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+        </thead>
+
+        <!-- tbody: table body -->
+        <tbody>
+            <!-- tr: table row -->
+            <tr>
+                <!-- td: table data -->
+                <td>1</td>
+                <td>A</td>
+                <td>BBBBBBBB</td>
+                <td>C</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>A</td>
+                <td>B<br>B</td>
+                <td>CCCCC</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>A</td>
+                <td>B</td>
+                <td>CCCCC</td>
+                <td>D</td>
+            </tr>
+        </tbody>
+
+        <!-- tfoot: table footer -->
+        <tfoot>
+            <tr>
+                <td></td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <table>
+        <caption>Testdaten erstes Quartal 2022</caption>
+
+        <!-- thead: table header -->
+        <thead>
+            <tr>
+                <!-- th: table head -->
+                <td></td>
+                <!-- Der Scope ist nicht sichbar im Browser, wird aber von Screen Readern verwendet, um die Daten zu interpretieren -->
+                <th scope="col">Mo</th>
+                <th scope="col">Di</th>
+                <th scope="col">Mi</th>
+                <th scope="col">Do</th>
+            </tr>
+        </thead>
+
+        <!-- tbody: table body -->
+        <tbody>
+            <!-- tr: table row -->
+            <tr>
+                <!-- td: table data -->
+                <th scope="row">09:00 - 09:45</th>
+                <td>A</td>
+                <td>BBBBBBBB</td>
+                <td>C</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <th scope="row">09:45 - 10:30</th>
+                <td>A</td>
+                <td>B<br>B</td>
+                <td>CCCCC</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <th scope="row">10:45 - 11:30</th>
+                <td>A</td>
+                <td>B</td>
+                <td>CCCCC</td>
+                <td>D</td>
+            </tr>
+        </tbody>
+
+        <!-- tfoot: table footer -->
+        <tfoot>
+            <tr>
+                <td></td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
