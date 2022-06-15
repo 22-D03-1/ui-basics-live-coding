@@ -1,100 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>News Page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@900|300"
+            rel="stylesheet"
+        />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900|300" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet" />
+    </head>
 
-    <link href="./css/style.css" rel="stylesheet">
-</head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Computing</a></li>
+                <li><a href="#">Entertainment</a></li>
+                <li><a href="#">Communication</a></li>
+                <li><a href="#">Science</a></li>
+            </ul>
+        </nav>
 
-<body>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Computing</a></li>
-            <li><a href="#">Entertainment</a></li>
-            <li><a href="#">Communication</a></li>
-            <li><a href="#">Science</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <h1>Provider News from around the World</h1>
-        <section>
-            <h2>Providers</h2>
-            <div class="flex">
-                <div>
-                    <strong>Telekom</strong>
-                    <p>
-                        Discover Telekom and their services.<br>
-                        <a href="#">read more</a>
-                    </p>
+        <main>
+            <h1>Provider News from around the World</h1>
+            <section>
+                <h2>Providers</h2>
+                <div class="flex">
+                    <div>
+                        <strong>Telekom</strong>
+                        <p>
+                            Discover Telekom and their services.<br />
+                            <a href="#">read more</a>
+                        </p>
+                    </div>
+                    <div>
+                        <strong>Verizon</strong>
+                        <p>
+                            More about Verizon in this article.<br />
+                            <a href="#">read more</a>
+                        </p>
+                    </div>
+                    <div>
+                        <strong>AT&T</strong>
+                        <p>
+                            Every detail about AT&T.<br />
+                            <a href="#">read more</a>
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <strong>Verizon</strong>
-                    <p>
-                        More about Verizon in this article.<br>
-                        <a href="#">read more</a>
-                    </p>
-                </div>
-                <div>
-                    <strong>AT&T</strong>
-                    <p>
-                        Every detail about AT&T.<br>
-                        <a href="#">read more</a>
-                    </p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section>
-            <h2>Subscribe to our newsletter</h2>
-            <form>
-                <input id="email" type="email" placeholder="Email Address" aria-label="Email Address">
+            <section>
+                <h2>Subscribe to our newsletter</h2>
+                <form>
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Email Address"
+                        aria-label="Email Address"
+                    />
 
-                <input type="submit" value="subscribe">
-            </form>
-        </section>
+                    <button class="button-primary" type="submit">
+                        Subscribe
+                    </button>
+                </form>
+            </section>
 
-        <section>
-            <h2>Our print magazine subscription plans</h2>
-            <div id="subscription-plans" class="flex">
-                <div>
-                    <h3>Junior</h3>
-                    <ul>
-                        <li>4 printed issues</li>
-                        <li>100 online articles</li>
-                    </ul>
-                    <button>Subscribe now</button>
+            <section>
+                <h2>Our print magazine subscription plans</h2>
+                <div id="subscription-plans" class="flex">
+                    <div>
+                        <h3>Junior</h3>
+                        <ul>
+                            <li>4 printed issues</li>
+                            <li>100 online articles</li>
+                        </ul>
+                        <button class="button-secondary">Subscribe now</button>
+                    </div>
+                    <div>
+                        <h3>Pro</h3>
+                        <ul>
+                            <li>12 printed issues</li>
+                            <li>250 online articles</li>
+                            <li>forum access</li>
+                        </ul>
+                        <button class="button-secondary">Subscribe now</button>
+                    </div>
+                    <div>
+                        <h3>Geek</h3>
+                        <ul>
+                            <li>24 printed issues</li>
+                            <li>+1000 online articles</li>
+                            <li>forum access</li>
+                            <li>your name in the credits</li>
+                        </ul>
+                        <button class="button-secondary">Subscribe now</button>
+                    </div>
                 </div>
-                <div>
-                    <h3>Pro</h3>
-                    <ul>
-                        <li>12 printed issues</li>
-                        <li>250 online articles</li>
-                        <li>forum access</li>
-                    </ul>
-                    <button>Subscribe now</button>
-                </div>
-                <div>
-                    <h3>Geek</h3>
-                    <ul>
-                        <li>24 printed issues</li>
-                        <li>+1000 online articles</li>
-                        <li>forum access</li>
-                        <li>your name in the credits</li>
-                    </ul>
-                    <button>Subscribe now</button>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-
+            </section>
+        </main>
+    </body>
 </html>

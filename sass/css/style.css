@@ -24,8 +24,7 @@ form input {
   margin: 0 0 10px;
   padding: 10px;
 }
-
-form input[type=submit] {
+form button {
   width: 100%;
 }
 
@@ -34,6 +33,8 @@ h1 {
   word-spacing: 0.1em;
   line-height: 1.2em;
   color: blue;
+  background-color: white;
+  font-size: 2rem;
 }
 
 main {
@@ -78,18 +79,36 @@ nav ul li a {
   padding: 10px 10px 60px;
   position: relative;
 }
-
+#subscription-plans div button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
 #subscription-plans ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-#subscription-plans div button {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
+.button-secondary, .button-primary {
+  border: none;
+  font-weight: 700;
+  padding: 1rem;
+  color: white;
+}
+.button-secondary:hover, .button-primary:hover {
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: blue;
+  font-size: 3rem;
+}
+
+.button-secondary {
+  background-color: hsl(240deg, 20%, 50%);
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

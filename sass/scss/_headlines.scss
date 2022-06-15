@@ -2,5 +2,6 @@ h1 {
     margin-top: 60px;
     word-spacing: 0.1em;
     line-height: 1.2em;
-    color: blue;
+    color: $color-primary;
+    @include app-theme($fontS: 2rem, $theme: white);
 }

@@ -1,0 +1,19 @@
+%buttons-base {
+    border: none;
+    font-weight: 700;
+    padding: 1rem;
+    color: white;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.button-primary {
+    @include app-theme($theme: blue, $fontS: 3rem);
+    @extend %buttons-base;
+}
+
+.button-secondary {
+    @extend %buttons-base;
+    @include app-theme($theme: $color-secondary);
+}
