@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS organisieren</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #CCC;
+            margin: 50px 0;
+        }
+
+        /* --------- */
+        /*    BEM    */
+        /* --------- */
+        .top-story {
+            text-align: center;
+        }
+
+        .top-story__button {
+            background-color: #32609C;
+            color: #FFF;
+            padding: 0.25em 2em;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .top-story__button--outlined {
+            background-color: transparent;
+            border: 1px solid #32609C;
+            color: #32609C;
+        }
+
+        .top-story__button--cta {
+            display: block;
+            margin: 1em 0;
+            text-align: center;
+            padding: 1em 2em;
+        }
+
+        .top-story__image {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+
+        .top-story__info {
+            color: #CCC;
+        }
+
+
+
+        /* ------------------- */
+        /*    Utility-First    */
+        /* ------------------- */
+        .text-align-center {
+            text-align: center;
+        }
+
+        .width-full {
+            width: 100%;
+        }
+
+        .aspect-ratio-2-1 {
+            aspect-ratio: 2 / 1;
+        }
+
+        .aspect-ratio-1-1 {
+            aspect-ratio: 1 / 1;
+        }
+
+        .aspect-ratio-1-2 {
+            aspect-ratio: 1 / 2;
+        }
+
+        .object-fit-cover {
+            object-fit: cover;
+        }
+
+        .color-copy {
+            color: #555;
+        }
+
+        .color-info {
+            color: #CCC;
+        }
+
+        .color-primary {
+            color: #32609C;
+        }
+
+        .color-secondary {
+            color: #996633;
+        }
+
+        .ma-1 {
+            margin: 1em;
+        }
+
+        .ma-2 {
+            margin: 2em;
+        }
+
+        .ma-3 {
+            margin: 3em;
+        }
+
+        .ma-4 {
+            margin: 4em;
+        }
+
+        .ma-5 {
+            margin: 5em;
+        }
+
+        .mb-2 {
+            margin-bottom: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="content-wrapper top-story">
+        <img class="top-story__image"
+            src="https://images.unsplash.com/photo-1648737119247-e93f56878edf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
+            alt="News Article Image">
+        <span class="top-story__info">February 2</span>
+        <span class="top-story__info">Opinion</span>
+        <h2 class="text-align-center">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+        <p class="text-align-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima deserunt
+            necessitatibus officiis explicabo
+            ut quaerat libero hic laborum perspiciatis ipsam accusantium placeat pariatur possimus voluptatem, deleniti
+            at molestias autem blanditiis.</p>
+        <a class="top-story__button" href="#">Read more opinions</a>
+        <a class="top-story__button top-story__button--outlined" href="#">Related Topics</a>
+        <a class="top-story__button top-story__button--cta" href="#">Order now</a>
+    </section>
+
+    <section class="content-wrapper text-align-center">
+        <img class="width-full aspect-ratio-1-1 object-fit-cover"
+            src="https://images.unsplash.com/photo-1648737119422-2680a7e39089?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
+            alt="Politics News Image">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+        <span class="color-info">February 2</span>
+        <span class="color-info">Opinion</span>
+        <p class="color-copy">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima deserunt necessitatibus
+            officiis explicabo
+            ut quaerat libero hic laborum perspiciatis ipsam accusantium placeat pariatur possimus voluptatem, deleniti
+            at molestias autem blanditiis.</p>
+        <a class="color-primary" href="#">Read more opinions</a>
+        <a class="color-secondary" href="#">Read more opinions</a>
+    </section>
+</body>
+
+</html>
