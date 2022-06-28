@@ -1,0 +1,10 @@
+/*
+    Wir kombinieren die Klasse des Body mit der Klasse des dazugehörigen Links.
+    Dadurch wird nur der Link angesprochen, auf dessen Seite wir uns gerade befinden.
+    Mit Kommas getrennt führen wir hier alle benötigten Kombinationen auf und gestalten somit die aktiven Links.
+*/
+.page-page1 .nav-page1 a, /* Diese Zeile lässt nur den Link zur Page 1 auf der Page 1 rot anzeigen */
+.page-page2 .nav-page2 a, /* Diese Zeile lässt nur den Link zur Page 2 auf der Page 2 rot anzeigen */
+.page-page3 .nav-page3 a  /* Diese Zeile lässt nur den Link zur Page 3 auf der Page 3 rot anzeigen */ {
+    color: red;
+}
